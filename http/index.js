@@ -1,11 +1,11 @@
 import { getCookie, parseCookie } from '@/utils/cookieUtil';
-import { isServer } from '@/scaffold/env';
+import { isServer } from '@/scaffold/env'; // 环境判断
 import {
   reqLoggerInterceptor, reqHeaderInterceptor, reqErrInterceptor, resInterceptor, resErrInterceptor,
 } from './axiosInterceptors';
-import axioUtils from './axiosUtils';
+import axioUtils from './axiosUtils'; 
 
-export default function (req, isNoResInterceptor) {
+export default function (req, isNoResInterceptor) { // req 和 isNoResInterceptor 是服务端渲染里面的返回
   let token = '';
   let ip = '';
   try {
@@ -13,7 +13,7 @@ export default function (req, isNoResInterceptor) {
   } catch (e) {
     console.log(e);
   }
-  if (isServer) {
+  if (isServer) { // 判断在什么环境
     const cookies = parseCookie(req.headers.cookie || '');
     token = cookies && cookies._z93 || '';
   } else {

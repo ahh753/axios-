@@ -1,6 +1,6 @@
 /* eslint-disable */
 import logger from '@utils/logger';
-import { ERROR_LEVEL, STATUS_CODE } from '@utils/http/const';
+import { ERROR_LEVEL, STATUS_CODE } from '@utils/http/const'; // 和后台定义返回数据的含义
 
 export const reqHeaderInterceptor = (customHeaders, ip) => (config) => {
   const { method, headers } = config;

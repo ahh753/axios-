@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'; // axios
 import qs from 'qs';
 // import Config from '@scaffold/config';
 
